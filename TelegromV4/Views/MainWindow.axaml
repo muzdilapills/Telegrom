@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TelegromV4.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        xmlns:vm="using:TelegromV4.ViewModels"
+        Title="Telegrom V4"
+        Width="900"
+        Height="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <!-- Основной контент -->
+        <ContentControl Content="{Binding CurrentView}"/>
+        
+        <!-- Оверлей бана -->
+        <Border Background="#80000000"
+                IsVisible="{Binding ShowBanOverlay}">
+            <Border Background="#2D2D30"
+                    CornerRadius="10"
+                    Width="400"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <StackPanel Margin="30"
+                            Spacing="15">
+                    
+                    <TextBlock Text="⛔ ДОСТУП ЗАБЛОКИРОВАН ⛔"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="#F44336"
+                               HorizontalAlignment="Center"/>
+                    
+                    <TextBlock Text="{Binding BanMessage}"
+                               FontSize="14"
+                               Foreground="White"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"/>
+                    
+                    <Button Content="Выйти из аккаунта"
+                            Command="{Binding ExitFromBanCommand}"
+                            Background="#F44336"
+                            Foreground="White"
+                            Height="40"/>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
+</Window>

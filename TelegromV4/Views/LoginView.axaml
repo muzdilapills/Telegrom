@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TelegromV4.Views.LoginView"
+             x:DataType="vm:LoginViewModel"
+             xmlns:vm="using:TelegromV4.ViewModels">
+
+    <StackPanel Spacing="15"
+                VerticalAlignment="Center">
+        
+        <TextBlock Text="Welcome! Вход в Telegrom"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <TextBox PlaceholderText="Никнейм"
+                 Text="{Binding Nickname}"
+                 FontSize="14"
+                 Height="40"/>
+
+        <TextBox PlaceholderText="Пароль"
+                 Text="{Binding Password}"
+                 FontSize="14"
+                 Height="40"
+                 PasswordChar="•"/>
+
+        <TextBlock Text="{Binding ErrorMessage}"
+                   Foreground="Red"
+                   FontSize="12"
+                   IsVisible="{Binding HasError}"/>
+
+        <Button Content="Войти"
+                Command="{Binding LoginCommand}"
+                Background="#4CAF50"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                Height="40"
+                FontSize="14"/>
+
+        <Button Content="Нет аккаунта? Зарегистрироваться"
+                Command="{Binding GoToRegisterCommand}"
+                Background="Transparent"
+                Foreground="#2196F3"
+                Height="35"
+                FontSize="12"/>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,103 @@
+[
+  {
+    "Id": 1,
+    "Name": "12324",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [],
+    "DisplayName": "12324",
+    "MemberCount": "0 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 2,
+    "Name": "1",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [],
+    "DisplayName": "1",
+    "MemberCount": "0 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 3,
+    "Name": "1",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [],
+    "DisplayName": "1",
+    "MemberCount": "0 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 4,
+    "Name": "1",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [],
+    "DisplayName": "1",
+    "MemberCount": "0 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 5,
+    "Name": "1",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [
+      {
+        "Id": 1,
+        "SenderNickname": "Fourteen",
+        "Content": "fewrfewrfe",
+        "Timestamp": "2026-06-11T19:00:26.337219+03:00"
+      }
+    ],
+    "Members": [],
+    "DisplayName": "1",
+    "MemberCount": "0 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 6,
+    "Name": "111",
+    "CreatorNickname": "1233",
+    "AvatarPath": null,
+    "Messages": [
+      {
+        "Id": 1,
+        "SenderNickname": "1233",
+        "Content": "\u0412\u0441\u0435\u043C \u043F\u0440\u0438\u0432\u0435\u0442!\r\n",
+        "Timestamp": "2026-06-11T19:10:05.0003436+03:00"
+      }
+    ],
+    "Members": [
+      {
+        "Nickname": "1233",
+        "Role": 2,
+        "JoinedAt": "2026-06-11T19:09:57.905445+03:00"
+      },
+      {
+        "Nickname": "1234",
+        "Role": 0,
+        "JoinedAt": "2026-06-11T19:10:19.5688511+03:00"
+      }
+    ],
+    "DisplayName": "111",
+    "MemberCount": "2 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 7,
+    "Name": "111",
+    "CreatorNickname": "Fourteen",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [
+      {
+        "Nickname": "Fourteen",
+        "Role": 2,
+        "JoinedAt": "2026-06-11T19:10:42.2719591+03:00"
+      }
+    ],
+    "DisplayName": "111",
+    "MemberCount": "1 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  }
+]

@@ -1,0 +1,164 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TelegromV4.Views.ChatsView"
+             x:DataType="vm:ChatsViewModel"
+             xmlns:vm="using:TelegromV4.ViewModels">
+
+    <Grid>
+        <Grid ColumnDefinitions="250,*">
+            <!-- Левая панель с чатами -->
+            <Border Grid.Column="0"
+                    Background="#252526">
+                <StackPanel>
+                    <!-- Заголовок -->
+                    <Border Height="50"
+                            Background="#2D2D30">
+                        <TextBlock Text="Чаты"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    
+                    <!-- Список чатов -->
+                    <ListBox ItemsSource="{Binding Chats}"
+                             SelectedItem="{Binding SelectedChat}"
+                             Margin="5">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="Transparent"
+                                        Padding="10">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}"
+                                                   FontSize="14"
+                                                   FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding MemberCount}"
+                                                   FontSize="10"
+                                                   Foreground="Gray"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                    <!-- Кнопки снизу -->
+                    <StackPanel Margin="5"
+                                Spacing="5">
+                        <Button Content="➕ Создать чат"
+                                Command="{Binding OpenCreateChatCommand}"
+                                Background="#4CAF50"
+                                Foreground="White"/>
+                        
+                        <Button Content="⚙️ Настройки"
+                                Background="#555555"
+                                Foreground="White"
+                                IsEnabled="False"/>
+                        
+                        <Button Content="👥 Контакты"
+                                Background="#555555"
+                                Foreground="White"
+                                IsEnabled="False"/>
+                        
+                        <Button Content="🖥️ Терминал"
+                                Command="{Binding OpenTerminalCommand}"
+                                Background="#FF9800"
+                                Foreground="White"
+                                IsVisible="{Binding IsAdmin}"/>
+                        
+                        <Button Content="🚪 Выйти"
+                                Command="{Binding LogoutCommand}"
+                                Background="#F44336"
+                                Foreground="White"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <!-- Правая панель - содержимое чата -->
+            <Border Grid.Column="1"
+                    Background="#1E1E1E">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <!-- Заголовок чата с возможностью клика для открытия настроек -->
+                    <Border Grid.Row="0"
+                            Height="50"
+                            Background="#2D2D30">
+                        <Button Command="{Binding OpenChatSettingsCommand}"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                            <StackPanel>
+                                <TextBlock Text="{Binding SelectedChat.Name, FallbackValue='Выберите чат'}"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding SelectedChat.MemberCount, FallbackValue=''}"
+                                           FontSize="10"
+                                           Foreground="Gray"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                    
+                    <!-- Сообщения -->
+                    <ScrollViewer Grid.Row="1">
+                        <ItemsControl ItemsSource="{Binding Messages}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="10"
+                                            CornerRadius="5">
+                                        <StackPanel>
+                                            <TextBlock FontWeight="Bold">
+                                                <Run Text="{Binding SenderNickname}"/>
+                                                <Run Text=":"/>
+                                            </TextBlock>
+                                            <TextBlock Text="{Binding Content}"
+                                                       TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding Timestamp, StringFormat='{}{0:HH:mm:ss}'}"
+                                                       FontSize="10"
+                                                       Foreground="Gray"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                    
+                    <!-- Ввод сообщения -->
+                    <Border Grid.Row="2"
+                            Background="#2D2D30"
+                            Padding="10">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBox Grid.Column="0"
+                                     PlaceholderText="Введите сообщение..."
+                                     Text="{Binding NewMessage}"
+                                     AcceptsReturn="True"/>
+                            <Button Grid.Column="1"
+                                    Content="Отправить"
+                                    Command="{Binding SendMessageCommand}"
+                                    Background="#4CAF50"
+                                    Foreground="White"
+                                    Margin="5,0,0,0"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <!-- Оверлей настроек чата (затемнённый фон) -->
+        <Border Background="#80000000"
+                IsVisible="{Binding ShowSettings}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch">
+            
+            <!-- ContentControl для отображения окна настроек -->
+            <ContentControl x:Name="SettingsContent"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        </Border>
+    </Grid>
+</UserControl>
