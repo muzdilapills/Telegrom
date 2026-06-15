@@ -1,0 +1,239 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TelegromV4.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel"
+             xmlns:vm="using:TelegromV4.ViewModels">
+
+    <Grid ColumnDefinitions="200,*">
+        <!-- Левая панель - кнопки -->
+        <Border Grid.Column="0"
+                Background="#252526">
+            <StackPanel Margin="10"
+                       Spacing="5">
+                <Button Content="👤 Профиль"
+                        Command="{Binding ShowProfileCommand}"
+                        Background="#2196F3"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="🎨 Оформление"
+                        Command="{Binding ShowAppearanceCommand}"
+                        Background="#FF9800"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="🔒 Приватность"
+                        Command="{Binding ShowPrivacyCommand}"
+                        Background="#9C27B0"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="📞 Контакты"
+                        Command="{Binding ShowContactsCommand}"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        Height="35"/>
+                
+                <Button Content="🚪 Выйти из аккаунта"
+                        Command="{Binding LogoutCommand}"
+                        Background="#F44336"
+                        Foreground="White"
+                        Height="35"
+                        Margin="0,20,0,0"/>
+                
+                <Button Content="❌ Выйти из приложения"
+                        Command="{Binding ExitAppCommand}"
+                        Background="#D32F2F"
+                        Foreground="White"
+                        Height="35"/>
+                
+                <Button Content="✖ Закрыть"
+                        Command="{Binding CloseCommand}"
+                        Background="#555555"
+                        Foreground="White"
+                        Height="35"
+                        Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Правая панель - содержимое -->
+        <ScrollViewer Grid.Column="1"
+                      Background="#1E1E1E">
+            <StackPanel Margin="20"
+                       Spacing="15">
+                
+                <!-- Профиль -->
+                <StackPanel x:Name="ProfilePanel">
+                    <TextBlock Text="Профиль"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    
+                    <Border Width="100"
+                            Height="100"
+                            CornerRadius="50"
+                            Background="#4CAF50"
+                            HorizontalAlignment="Center"
+                            Margin="0,10">
+                        <TextBlock Text="{Binding Nickname, StringFormat='{}{0:0}'}"
+                                   FontSize="40"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                    
+                    <Button Content="📁 Изменить аватар"
+                            Command="{Binding SelectAvatarCommand}"
+                            Background="#555555"
+                            Foreground="White"
+                            Width="150"
+                            HorizontalAlignment="Center"/>
+                    
+                    <TextBlock Text="Никнейм"
+                               Foreground="Gray"
+                               Margin="0,10,0,0"/>
+                    <TextBlock Text="{Binding Nickname}"
+                               FontSize="16"
+                               FontWeight="Bold"/>
+                    <TextBox PlaceholderText="Новый никнейм"
+                             Text="{Binding NewNickname}"/>
+                    
+                    <TextBlock Text="Email"
+                               Foreground="Gray"
+                               Margin="0,10,0,0"/>
+                    <TextBlock Text="{Binding Email}"
+                               FontSize="16"/>
+                    <TextBox PlaceholderText="Новый email"
+                             Text="{Binding NewEmail}"/>
+                    
+                    <Button Content="Сохранить"
+                            Command="{Binding SaveProfileCommand}"
+                            Background="#4CAF50"
+                            Foreground="White"
+                            Width="100"
+                            HorizontalAlignment="Center"
+                            Margin="0,10"/>
+                    
+                    <TextBlock Text="{Binding ProfileErrorMessage}"
+                               Foreground="Red"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+                
+                <!-- Оформление -->
+                <StackPanel x:Name="AppearancePanel" IsVisible="False">
+                    <TextBlock Text="Оформление"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    
+                    <TextBlock Text="Тема"
+                               Foreground="Gray"
+                               Margin="0,10,0,0"/>
+                    <ComboBox ItemsSource="{Binding Themes}"
+                              SelectedIndex="{Binding SelectedThemeIndex}"
+                              Width="200"/>
+                    <Button Content="Применить тему"
+                            Command="{Binding SaveThemeCommand}"
+                            Background="#FF9800"
+                            Foreground="White"
+                            Width="150"
+                            Margin="0,10"/>
+                    
+                    <TextBlock Text="Обои в чатах"
+                               Foreground="Gray"
+                               Margin="0,10,0,0"/>
+                    <TextBlock Text="{Binding WallpaperPath}"/>
+                    <Button Content="📁 Выбрать обои"
+                            Command="{Binding SelectWallpaperCommand}"
+                            Background="#555555"
+                            Foreground="White"
+                            Width="150"
+                            Margin="0,10"/>
+                </StackPanel>
+                
+                <!-- Приватность -->
+                <StackPanel x:Name="PrivacyPanel" IsVisible="False">
+                    <TextBlock Text="Приватность"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    
+                    <TextBlock Text="Приглашать в чаты"
+                               Margin="0,10,0,0"/>
+                    <ComboBox ItemsSource="{Binding PrivacyOptions}"
+                              SelectedIndex="{Binding InviteToChatsIndex}"
+                              Width="200"/>
+                    
+                    <TextBlock Text="Приглашать в каналы"
+                               Margin="0,10,0,0"/>
+                    <ComboBox ItemsSource="{Binding PrivacyOptions}"
+                              SelectedIndex="{Binding InviteToChannelsIndex}"
+                              Width="200"/>
+                    
+                    <TextBlock Text="Писать в личные сообщения"
+                               Margin="0,10,0,0"/>
+                    <ComboBox ItemsSource="{Binding PrivacyOptions}"
+                              SelectedIndex="{Binding PrivateMessagesIndex}"
+                              Width="200"/>
+                    
+                    <TextBlock Text="Показывать аватарку"
+                               Margin="0,10,0,0"/>
+                    <ComboBox ItemsSource="{Binding PrivacyOptions}"
+                              SelectedIndex="{Binding ShowAvatarIndex}"
+                              Width="200"/>
+                    
+                    <CheckBox Content="Режим стримера (скрыть почту)"
+                              IsChecked="{Binding StreamerMode}"
+                              Margin="0,10"/>
+                    
+                    <Button Content="Сохранить"
+                            Command="{Binding SavePrivacyCommand}"
+                            Background="#4CAF50"
+                            Foreground="White"
+                            Width="100"
+                            Margin="0,10"/>
+                </StackPanel>
+                
+                <!-- Контакты -->
+                <StackPanel x:Name="ContactsPanel" IsVisible="False">
+                    <TextBlock Text="Контакты"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+                    
+                    <ListBox ItemsSource="{Binding Contacts}"
+                             SelectedItem="{Binding SelectedContact}"
+                             Height="200"
+                             Margin="0,10">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="10">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CustomName}"
+                                                   FontSize="14"
+                                                   FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding ContactNickname}"
+                                                   FontSize="11"
+                                                   Foreground="Gray"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                    <TextBox PlaceholderText="Новое имя для контакта"
+                             Text="{Binding NewContactName}"/>
+                    <Button Content="✏️ Переименовать"
+                            Command="{Binding UpdateContactNameCommand}"
+                            Background="#FF9800"
+                            Foreground="White"
+                            Margin="0,5"/>
+                    
+                    <Button Content="💬 Начать общение"
+                            Command="{Binding CreatePrivateChatCommand}"
+                            Background="#4CAF50"
+                            Foreground="White"
+                            Margin="0,5"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

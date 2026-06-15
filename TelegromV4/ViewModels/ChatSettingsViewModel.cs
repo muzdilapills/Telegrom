@@ -23,6 +23,9 @@ public partial class ChatSettingsViewModel : ObservableObject
     private string _newChatName = string.Empty;
     
     [ObservableProperty]
+    private string _newAvatarPath = string.Empty;
+    
+    [ObservableProperty]
     private ObservableCollection<ChatMember> _members = new ObservableCollection<ChatMember>();
     
     [ObservableProperty]
@@ -63,6 +66,7 @@ public partial class ChatSettingsViewModel : ObservableObject
     {
         ChatName = _chat.Name;
         NewChatName = _chat.Name;
+        NewAvatarPath = _chat.AvatarPath ?? string.Empty;
         
         Members.Clear();
         foreach (var member in _chat.Members)
@@ -118,6 +122,34 @@ public partial class ChatSettingsViewModel : ObservableObject
             ChatUpdated?.Invoke();
             ErrorMessage = "Название изменено!";
             HasError = false;
+        }
+    }
+
+    [RelayCommand]
+    private void SelectAvatar()
+    {
+        // TODO: открыть диалог выбора файла
+        NewAvatarPath = "new_avatar.png";
+    }
+
+    [RelayCommand]
+    private void ChangeAvatar()
+    {
+        if (!_isAdmin)
+        {
+            ErrorMessage = "Только администраторы могут менять аватар";
+            HasError = true;
+            return;
+        }
+        
+        if (!string.IsNullOrWhiteSpace(NewAvatarPath))
+        {
+            if (_chatService.UpdateChatAvatar(_chat.Id, _currentUser, NewAvatarPath))
+            {
+                ChatUpdated?.Invoke();
+                ErrorMessage = "Аватар изменён!";
+                HasError = false;
+            }
         }
     }
 

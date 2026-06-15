@@ -99,5 +99,61 @@
     ],
     "DisplayName": "111",
     "MemberCount": "1 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 8,
+    "Name": "testgroup v2",
+    "CreatorNickname": "admin",
+    "AvatarPath": null,
+    "Messages": [
+      {
+        "Id": 1,
+        "SenderNickname": "admin",
+        "Content": "\u043F\u0440\u0438\u0435\u0442?\r\n",
+        "Timestamp": "2026-06-15T17:52:11.8535417+03:00"
+      }
+    ],
+    "Members": [
+      {
+        "Nickname": "admin",
+        "Role": 2,
+        "JoinedAt": "2026-06-15T17:52:03.7260174+03:00"
+      },
+      {
+        "Nickname": "Fourteen",
+        "Role": 0,
+        "JoinedAt": "2026-06-15T17:52:03.7366216+03:00"
+      }
+    ],
+    "DisplayName": "testgroup v2",
+    "MemberCount": "2 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  },
+  {
+    "Id": 9,
+    "Name": "1",
+    "CreatorNickname": "12345",
+    "AvatarPath": null,
+    "Messages": [
+      {
+        "Id": 1,
+        "SenderNickname": "12345",
+        "Content": "\u043F\u0440\u0438\u0432\u0435\u0442?\r\n",
+        "Timestamp": "2026-06-15T18:12:47.4044498+03:00"
+      }
+    ],
+    "Members": [
+      {
+        "Nickname": "12345",
+        "Role": 2,
+        "JoinedAt": "2026-06-15T18:12:42.2280947+03:00"
+      },
+      {
+        "Nickname": "admin",
+        "Role": 0,
+        "JoinedAt": "2026-06-15T18:12:42.23648+03:00"
+      }
+    ],
+    "DisplayName": "1",
+    "MemberCount": "2 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
   }
 ]

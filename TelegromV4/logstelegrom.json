@@ -1,0 +1,138 @@
+[
+  {
+    "Id": 1,
+    "Timestamp": "2026-06-15 17:50:49",
+    "UserNickname": "System",
+    "Action": "CreateAdmin",
+    "Target": "admin",
+    "Details": "\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440 admin \u0441\u043E\u0437\u0434\u0430\u043D"
+  },
+  {
+    "Id": 2,
+    "Timestamp": "2026-06-15 17:50:49",
+    "UserNickname": "System",
+    "Action": "CreateAdmin",
+    "Target": "admin",
+    "Details": "\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440 \u0441\u043E\u0437\u0434\u0430\u043D"
+  },
+  {
+    "Id": 3,
+    "Timestamp": "2026-06-15 17:50:57",
+    "UserNickname": "admin",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 4,
+    "Timestamp": "2026-06-15 17:52:03",
+    "UserNickname": "admin",
+    "Action": "CreateChat",
+    "Target": "testgroup v2",
+    "Details": "\u0421\u043E\u0437\u0434\u0430\u043D \u0447\u0430\u0442: testgroup v2"
+  },
+  {
+    "Id": 5,
+    "Timestamp": "2026-06-15 17:52:03",
+    "UserNickname": "admin",
+    "Action": "AddMemberToChat",
+    "Target": "testgroup v2",
+    "Details": "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A: Fourteen"
+  },
+  {
+    "Id": 6,
+    "Timestamp": "2026-06-15 17:52:11",
+    "UserNickname": "admin",
+    "Action": "SendMessage",
+    "Target": "testgroup v2",
+    "Details": "\u043F\u0440\u0438\u0435\u0442?\r\n"
+  },
+  {
+    "Id": 7,
+    "Timestamp": "2026-06-15 17:59:40",
+    "UserNickname": "admin",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 8,
+    "Timestamp": "2026-06-15 18:00:57",
+    "UserNickname": "admin",
+    "Action": "CreateChannel",
+    "Target": "afdafa",
+    "Details": "\u0421\u043E\u0437\u0434\u0430\u043D \u043A\u0430\u043D\u0430\u043B: afdafa"
+  },
+  {
+    "Id": 9,
+    "Timestamp": "2026-06-15 18:01:16",
+    "UserNickname": "1234",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 10,
+    "Timestamp": "2026-06-15 18:01:28",
+    "UserNickname": "admin",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 11,
+    "Timestamp": "2026-06-15 18:11:07",
+    "UserNickname": "admin",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 12,
+    "Timestamp": "2026-06-15 18:12:28",
+    "UserNickname": "12345",
+    "Action": "Register",
+    "Target": "",
+    "Details": "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u043D"
+  },
+  {
+    "Id": 13,
+    "Timestamp": "2026-06-15 18:12:33",
+    "UserNickname": "12345",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  },
+  {
+    "Id": 14,
+    "Timestamp": "2026-06-15 18:12:42",
+    "UserNickname": "12345",
+    "Action": "CreateChat",
+    "Target": "1",
+    "Details": "\u0421\u043E\u0437\u0434\u0430\u043D \u0447\u0430\u0442: 1"
+  },
+  {
+    "Id": 15,
+    "Timestamp": "2026-06-15 18:12:42",
+    "UserNickname": "12345",
+    "Action": "AddMemberToChat",
+    "Target": "1",
+    "Details": "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A: admin"
+  },
+  {
+    "Id": 16,
+    "Timestamp": "2026-06-15 18:12:47",
+    "UserNickname": "12345",
+    "Action": "SendMessage",
+    "Target": "1",
+    "Details": "\u043F\u0440\u0438\u0432\u0435\u0442?\r\n"
+  },
+  {
+    "Id": 17,
+    "Timestamp": "2026-06-15 18:22:08",
+    "UserNickname": "admin",
+    "Action": "Login",
+    "Target": "",
+    "Details": "\u0412\u0445\u043E\u0434 \u0432 \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+  }
+]

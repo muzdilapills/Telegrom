@@ -1,34 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\views\\loginview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\views\\chatsettingsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\chatsettingsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\viewmodels\\chatsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:viewmodels\\chatsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\views\\settingsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\settingsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\views\\loginview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\loginview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\views\\chatsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\views\\chatsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\chatsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\models\\banneduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\githubbb\\telegrom\\telegromv4\\models\\banneduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:models\\banneduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|c:\\users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\telegromv4\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}|TelegromV4.csproj|solutionrelative:views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,10 +63,60 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAYwGYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T15:18:19.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatSettingsView.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\ChatSettingsView.axaml",
+              "RelativeDocumentMoniker": "Views\\ChatSettingsView.axaml",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\ChatSettingsView.axaml",
+              "RelativeToolTip": "Views\\ChatSettingsView.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-15T15:17:23.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\ViewModels\\ChatsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ChatsViewModel.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\ViewModels\\ChatsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ChatsViewModel.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAkwGAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T15:13:55.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SettingsView.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\SettingsView.axaml",
+              "RelativeDocumentMoniker": "Views\\SettingsView.axaml",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\SettingsView.axaml",
+              "RelativeToolTip": "Views\\SettingsView.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-15T14:54:28.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "LoginView.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\LoginView.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\LoginView.axaml",
               "RelativeDocumentMoniker": "Views\\LoginView.axaml",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\LoginView.axaml",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\LoginView.axaml",
               "RelativeToolTip": "Views\\LoginView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-06-11T15:44:10.772Z",
@@ -58,79 +124,74 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatsView.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\ChatsView.axaml",
-              "RelativeDocumentMoniker": "Views\\ChatsView.axaml",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\ChatsView.axaml",
-              "RelativeToolTip": "Views\\ChatsView.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-06-11T15:43:54.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T15:43:53.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T15:43:53.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Message.cs",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\Message.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\Message.cs",
               "RelativeDocumentMoniker": "Models\\Message.cs",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\Message.cs",
               "RelativeToolTip": "Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T15:43:52.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T15:43:52.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Chat.cs",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\Chat.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\Chat.cs",
               "RelativeDocumentMoniker": "Models\\Chat.cs",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\Chat.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\Chat.cs",
               "RelativeToolTip": "Models\\Chat.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T15:43:51.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T15:43:51.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "BannedUser.cs",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\BannedUser.cs",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\BannedUser.cs",
               "RelativeDocumentMoniker": "Models\\BannedUser.cs",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Models\\BannedUser.cs",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Models\\BannedUser.cs",
               "RelativeToolTip": "Models\\BannedUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T15:43:49.25Z",
+              "WhenOpened": "2026-06-11T15:43:49.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "Views\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-11T15:26:02.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "Views\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\source\\repos\\TelegromV4\\Views\\MainWindow.axaml",
-              "RelativeToolTip": "Views\\MainWindow.axaml",
+              "Title": "ChatsView.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\ChatsView.axaml",
+              "RelativeDocumentMoniker": "Views\\ChatsView.axaml",
+              "ToolTip": "C:\\Users\\\u0434.\u0442\u0443\u043F\u0430\u043B\u044C\u0441\u043A\u0438\u0439\\GitHubbb\\Telegrom\\TelegromV4\\Views\\ChatsView.axaml",
+              "RelativeToolTip": "Views\\ChatsView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-06-11T15:26:02.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T15:43:54.928Z"
             }
           ]
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bv3CFDQFwJ0=",
+  "dgSpecHash": "odO2OrQT5XA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\д.тупальский\\source\\repos\\TelegromV4\\TelegromV4.csproj",
+  "projectFilePath": "C:\\Users\\д.тупальский\\GitHubbb\\Telegrom\\TelegromV4\\TelegromV4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\д.тупальский\\.nuget\\packages\\avalonia\\12.0.4\\avalonia.12.0.4.nupkg.sha512",
     "C:\\Users\\д.тупальский\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.27548.20260419\\avalonia.angle.windows.natives.2.1.27548.20260419.nupkg.sha512",

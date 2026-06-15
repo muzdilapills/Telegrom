@@ -5,67 +5,218 @@
              xmlns:vm="using:TelegromV4.ViewModels">
 
     <Grid>
-        <Grid ColumnDefinitions="250,*">
+        <Grid ColumnDefinitions="280,*">
             <!-- Левая панель с чатами -->
             <Border Grid.Column="0"
                     Background="#252526">
                 <StackPanel>
-                    <!-- Заголовок -->
+                    <!-- Заголовок с кнопками -->
                     <Border Height="50"
                             Background="#2D2D30">
-                        <TextBlock Text="Чаты"
-                                   FontSize="18"
-                                   FontWeight="Bold"
-                                   Foreground="White"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <!-- Кнопка Настройки слева -->
+                            <Button Grid.Column="0"
+                                    Content="⚙️"
+                                    Command="{Binding OpenSettingsCommand}"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    FontSize="20"
+                                    Width="50"
+                                    BorderThickness="0"
+                                    Cursor="Hand"/>
+                            
+                            <!-- Надпись Чаты по центру -->
+                            <TextBlock Grid.Column="1"
+                                       Text="Чаты"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            
+                            <!-- Кнопки справа -->
+                            <StackPanel Grid.Column="2"
+                                       Orientation="Horizontal"
+                                       VerticalAlignment="Center"
+                                       Margin="0,0,10,0">
+                                <Button Content="👥"
+                                        Command="{Binding OpenCreateGroupCommand}"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        FontSize="18"
+                                        Width="40"
+                                        BorderThickness="0"
+                                        ToolTip.Tip="Создать группу"
+                                        Cursor="Hand"/>
+                                <Button Content="📢"
+                                        Command="{Binding OpenCreateChannelCommand}"
+                                        Background="Transparent"
+                                        Foreground="White"
+                                        FontSize="18"
+                                        Width="40"
+                                        BorderThickness="0"
+                                        ToolTip.Tip="Создать канал"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </Grid>
                     </Border>
                     
-                    <!-- Список чатов -->
-                    <ListBox ItemsSource="{Binding Chats}"
-                             SelectedItem="{Binding SelectedChat}"
-                             Margin="5">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="Transparent"
-                                        Padding="10">
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Name}"
-                                                   FontSize="14"
-                                                   FontWeight="Bold"/>
-                                        <TextBlock Text="{Binding MemberCount}"
-                                                   FontSize="10"
-                                                   Foreground="Gray"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                    <!-- Список чатов с прокруткой -->
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  Height="450">
+                        <StackPanel>
+                            <!-- Группы -->
+                            <Border Background="#2D2D30"
+                                    Height="30"
+                                    CornerRadius="5">
+                                <TextBlock Text="Группы"
+                                           Foreground="Gray"
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,0,0"/>
+                            </Border>
+                            
+                            <ListBox ItemsSource="{Binding Chats}"
+                                     SelectedItem="{Binding SelectedChatItem}"
+                                     Background="Transparent"
+                                     BorderThickness="0">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="Transparent"
+                                                Padding="10">
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Border Width="40"
+                                                            Height="40"
+                                                            CornerRadius="20"
+                                                            Background="#4CAF50"
+                                                            Margin="0,0,10,0">
+                                                        <TextBlock Text="👥"
+                                                                   FontSize="20"
+                                                                   VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                    <StackPanel VerticalAlignment="Center">
+                                                        <TextBlock Text="{Binding Name}"
+                                                                   FontSize="14"
+                                                                   FontWeight="Bold"
+                                                                   Foreground="White"/>
+                                                        <TextBlock Text="{Binding MemberCount}"
+                                                                   FontSize="10"
+                                                                   Foreground="Gray"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            
+                            <!-- Каналы -->
+                            <Border Background="#2D2D30"
+                                    Height="30"
+                                    CornerRadius="5">
+                                <TextBlock Text="Каналы"
+                                           Foreground="Gray"
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,0,0"/>
+                            </Border>
+                            
+                            <ListBox ItemsSource="{Binding Channels}"
+                                     SelectedItem="{Binding SelectedChatItem}"
+                                     Background="Transparent"
+                                     BorderThickness="0">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="Transparent"
+                                                Padding="10">
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Border Width="40"
+                                                            Height="40"
+                                                            CornerRadius="20"
+                                                            Background="#FF9800"
+                                                            Margin="0,0,10,0">
+                                                        <TextBlock Text="📢"
+                                                                   FontSize="20"
+                                                                   VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                    <StackPanel VerticalAlignment="Center">
+                                                        <TextBlock Text="{Binding Name}"
+                                                                   FontSize="14"
+                                                                   FontWeight="Bold"
+                                                                   Foreground="White"/>
+                                                        <TextBlock Text="{Binding MemberCount}"
+                                                                   FontSize="10"
+                                                                   Foreground="Gray"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            
+                            <!-- Личные чаты -->
+                            <Border Background="#2D2D30"
+                                    Height="30"
+                                    CornerRadius="5">
+                                <TextBlock Text="Личные сообщения"
+                                           Foreground="Gray"
+                                           VerticalAlignment="Center"
+                                           Margin="10,0,0,0"/>
+                            </Border>
+                            
+                            <ListBox ItemsSource="{Binding PrivateChats}"
+                                     SelectedItem="{Binding SelectedChatItem}"
+                                     Background="Transparent"
+                                     BorderThickness="0">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="Transparent"
+                                                Padding="10">
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Border Width="40"
+                                                            Height="40"
+                                                            CornerRadius="20"
+                                                            Background="#2196F3"
+                                                            Margin="0,0,10,0">
+                                                        <TextBlock Text="👤"
+                                                                   FontSize="20"
+                                                                   VerticalAlignment="Center"
+                                                                   HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                    <StackPanel VerticalAlignment="Center">
+                                                        <Button Command="{Binding $parent[UserControl].DataContext.OpenUserProfileCommand}"
+                                                                CommandParameter="{Binding User2}"
+                                                                Background="Transparent"
+                                                                BorderThickness="0"
+                                                                Cursor="Hand"
+                                                                Padding="0">
+                                                            <TextBlock Text="{Binding User2}"
+                                                                       FontSize="14"
+                                                                       FontWeight="Bold"
+                                                                       Foreground="White"/>
+                                                        </Button>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                    </ScrollViewer>
                     
                     <!-- Кнопки снизу -->
-                    <StackPanel Margin="5"
+                    <StackPanel Margin="10"
                                 Spacing="5">
-                        <Button Content="➕ Создать чат"
-                                Command="{Binding OpenCreateChatCommand}"
-                                Background="#4CAF50"
-                                Foreground="White"/>
-                        
-                        <Button Content="⚙️ Настройки"
-                                Background="#555555"
-                                Foreground="White"
-                                IsEnabled="False"/>
-                        
-                        <Button Content="👥 Контакты"
-                                Background="#555555"
-                                Foreground="White"
-                                IsEnabled="False"/>
-                        
                         <Button Content="🖥️ Терминал"
                                 Command="{Binding OpenTerminalCommand}"
                                 Background="#FF9800"
                                 Foreground="White"
                                 IsVisible="{Binding IsAdmin}"/>
-                        
                         <Button Content="🚪 Выйти"
                                 Command="{Binding LogoutCommand}"
                                 Background="#F44336"
@@ -78,30 +229,50 @@
             <Border Grid.Column="1"
                     Background="#1E1E1E">
                 <Grid RowDefinitions="Auto,*,Auto">
-                    <!-- Заголовок чата с возможностью клика для открытия настроек -->
+                    <!-- Заголовок чата -->
                     <Border Grid.Row="0"
                             Height="50"
                             Background="#2D2D30">
-                        <Button Command="{Binding OpenChatSettingsCommand}"
-                                Background="Transparent"
-                                BorderThickness="0"
-                                Cursor="Hand"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch">
-                            <StackPanel>
-                                <TextBlock Text="{Binding SelectedChat.Name, FallbackValue='Выберите чат'}"
-                                           FontSize="18"
-                                           FontWeight="Bold"
-                                           Foreground="White"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding SelectedChat.MemberCount, FallbackValue=''}"
-                                           FontSize="10"
-                                           Foreground="Gray"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
+                        <Grid>
+                            <TextBlock Text="{Binding CurrentChatTitle, FallbackValue='Выберите чат'}"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            
+                            <!-- Кнопка избранного -->
+                            <Button Content="⭐"
+                                    Command="{Binding OpenFavoriteCommand}"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    FontSize="16"
+                                    Width="40"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,0,50,0"/>
+                            
+                            <!-- Кнопка информации о чате -->
+                            <Button Content="ℹ️"
+                                    Command="{Binding OpenChatInfoCommand}"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    FontSize="16"
+                                    Width="40"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,0,10,0"
+                                    IsVisible="{Binding IsChatSelected}"/>
+                            
+                            <!-- Кнопка участников канала (только для каналов) -->
+                            <Button Content="👥"
+                                    Command="{Binding OpenChannelMembersCommand}"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    FontSize="16"
+                                    Width="40"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,0,90,0"
+                                    IsVisible="{Binding IsChannelSelected}"/>
+                        </Grid>
                     </Border>
                     
                     <!-- Сообщения -->
@@ -110,17 +281,22 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Margin="10"
-                                            CornerRadius="5">
+                                            Padding="10"
+                                            CornerRadius="8"
+                                            Background="#2D2D30">
                                         <StackPanel>
-                                            <TextBlock FontWeight="Bold">
+                                            <TextBlock FontWeight="Bold"
+                                                       Foreground="#4CAF50">
                                                 <Run Text="{Binding SenderNickname}"/>
                                                 <Run Text=":"/>
                                             </TextBlock>
                                             <TextBlock Text="{Binding Content}"
-                                                       TextWrapping="Wrap"/>
+                                                       TextWrapping="Wrap"
+                                                       Foreground="White"/>
                                             <TextBlock Text="{Binding Timestamp, StringFormat='{}{0:HH:mm:ss}'}"
                                                        FontSize="10"
-                                                       Foreground="Gray"/>
+                                                       Foreground="Gray"
+                                                       HorizontalAlignment="Right"/>
                                         </StackPanel>
                                     </Border>
                                 </DataTemplate>
@@ -142,21 +318,96 @@
                                     Command="{Binding SendMessageCommand}"
                                     Background="#4CAF50"
                                     Foreground="White"
-                                    Margin="5,0,0,0"/>
+                                    Margin="5,0,0,0"
+                                    IsEnabled="{Binding CanSendMessage}"/>
                         </Grid>
                     </Border>
                 </Grid>
             </Border>
         </Grid>
         
-        <!-- Оверлей настроек чата (затемнённый фон) -->
+        <!-- Оверлей настроек чата -->
         <Border Background="#80000000"
                 IsVisible="{Binding ShowSettings}"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch">
-            
-            <!-- ContentControl для отображения окна настроек -->
             <ContentControl x:Name="SettingsContent"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        </Border>
+        
+        <!-- Оверлей профиля пользователя -->
+        <Border Background="#80000000"
+                IsVisible="{Binding ShowUserProfile}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch">
+            <ContentControl Content="{Binding UserProfileViewModel}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+        </Border>
+        
+        <!-- Оверлей избранного -->
+        <Border Background="#80000000"
+                IsVisible="{Binding ShowFavorite}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch">
+            <Border Background="#2D2D30"
+                    CornerRadius="10"
+                    Padding="20"
+                    Width="500"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="⭐ Избранное"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+                    
+                    <ScrollViewer Height="300">
+                        <ItemsControl ItemsSource="{Binding FavoriteMessages}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="5"
+                                            Padding="10"
+                                            Background="#3D3D40"
+                                            CornerRadius="5">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Message}"
+                                                       TextWrapping="Wrap"
+                                                       Foreground="White"/>
+                                            <TextBlock Text="{Binding Timestamp}"
+                                                       FontSize="10"
+                                                       Foreground="Gray"
+                                                       HorizontalAlignment="Right"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                    
+                    <TextBox PlaceholderText="Добавить новую заметку..."
+                             Text="{Binding NewFavoriteMessage}"
+                             AcceptsReturn="True"/>
+                    <Button Content="➕ Добавить в избранное"
+                            Command="{Binding AddToFavoritesCommand}"
+                            Background="#4CAF50"
+                            Foreground="White"/>
+                    <Button Content="✖ Закрыть"
+                            Command="{Binding CloseFavoriteCommand}"
+                            Background="#555555"
+                            Foreground="White"/>
+                </StackPanel>
+            </Border>
+        </Border>
+        
+        <!-- Оверлей участников канала -->
+        <Border Background="#80000000"
+                IsVisible="{Binding ShowChannelMembers}"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch">
+            <ContentControl Content="{Binding ChannelMembersViewModel}"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
         </Border>

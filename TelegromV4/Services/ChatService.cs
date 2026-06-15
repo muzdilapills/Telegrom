@@ -11,11 +11,11 @@ public class ChatService
 {
     private const string ChatsFile = "chats_data.json";
     private List<Chat> _chats = new List<Chat>();
+    private readonly LogService _logService;
 
-    public event Action<string, string>? LogEvent;
-
-    public ChatService()
+    public ChatService(LogService logService)
     {
+        _logService = logService;
         LoadChats();
     }
 
@@ -56,7 +56,7 @@ public class ChatService
         _chats.Add(chat);
         SaveChats();
         
-        LogEvent?.Invoke(creatorNickname, $"Создал чат: {name}");
+        _logService.AddLog(creatorNickname, "CreateChat", name, $"Создан чат: {name}");
         return chat;
     }
 
@@ -70,28 +70,41 @@ public class ChatService
         return _chats.FirstOrDefault(c => c.Id == chatId);
     }
 
+    public List<Chat> GetAllChats()
+    {
+        return _chats;
+    }
+
     public bool AddMemberToChat(int chatId, string adminNickname, string newMemberNickname)
     {
-        var chat = GetChat(chatId);
-        if (chat == null) return false;
-        
-        var admin = chat.Members.FirstOrDefault(m => m.Nickname == adminNickname);
-        if (admin == null || (admin.Role != ChatRole.Admin && admin.Role != ChatRole.Creator))
-            return false;
-        
-        if (chat.Members.Any(m => m.Nickname == newMemberNickname))
-            return false;
-        
-        chat.Members.Add(new ChatMember
+        try
         {
-            Nickname = newMemberNickname,
-            Role = ChatRole.Member,
-            JoinedAt = DateTime.Now
-        });
-        
-        SaveChats();
-        LogEvent?.Invoke(adminNickname, $"Добавил {newMemberNickname} в чат {chat.Name}");
-        return true;
+            var chat = GetChat(chatId);
+            if (chat == null) return false;
+            
+            var admin = chat.Members.FirstOrDefault(m => m.Nickname == adminNickname);
+            if (admin == null || (admin.Role != ChatRole.Admin && admin.Role != ChatRole.Creator))
+                return false;
+            
+            if (chat.Members.Any(m => m.Nickname == newMemberNickname))
+                return false;
+            
+            chat.Members.Add(new ChatMember
+            {
+                Nickname = newMemberNickname,
+                Role = ChatRole.Member,
+                JoinedAt = DateTime.Now
+            });
+            
+            SaveChats();
+            _logService.AddLog(adminNickname, "AddMemberToChat", chat.Name, $"Добавлен участник: {newMemberNickname}");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _logService.AddLog("System", "Error", "", $"Ошибка добавления участника: {ex.Message}");
+            return false;
+        }
     }
 
     public bool RemoveMemberFromChat(int chatId, string adminNickname, string memberNickname)
@@ -108,7 +121,7 @@ public class ChatService
         
         chat.Members.Remove(member);
         SaveChats();
-        LogEvent?.Invoke(adminNickname, $"Удалил {memberNickname} из чата {chat.Name}");
+        _logService.AddLog(adminNickname, "RemoveMemberFromChat", chat.Name, $"Удалён участник: {memberNickname}");
         return true;
     }
 
@@ -125,7 +138,7 @@ public class ChatService
         
         target.Role = ChatRole.Admin;
         SaveChats();
-        LogEvent?.Invoke(creatorNickname, $"Назначил {targetNickname} администратором чата {chat.Name}");
+        _logService.AddLog(creatorNickname, "MakeChatAdmin", chat.Name, $"Назначен администратор: {targetNickname}");
         return true;
     }
 
@@ -142,7 +155,7 @@ public class ChatService
         
         target.Role = ChatRole.Member;
         SaveChats();
-        LogEvent?.Invoke(creatorNickname, $"Снял администратора {targetNickname} с чата {chat.Name}");
+        _logService.AddLog(creatorNickname, "RemoveChatAdmin", chat.Name, $"Снят администратор: {targetNickname}");
         return true;
     }
 
@@ -158,7 +171,7 @@ public class ChatService
         var oldName = chat.Name;
         chat.Name = newName;
         SaveChats();
-        LogEvent?.Invoke(adminNickname, $"Переименовал чат '{oldName}' в '{newName}'");
+        _logService.AddLog(adminNickname, "RenameChat", oldName, $"Новое название: {newName}");
         return true;
     }
 
@@ -173,7 +186,7 @@ public class ChatService
         
         chat.AvatarPath = avatarPath;
         SaveChats();
-        LogEvent?.Invoke(adminNickname, $"Изменил аватар чата {chat.Name}");
+        _logService.AddLog(adminNickname, "ChangeChatAvatar", chat.Name, $"Новый аватар: {avatarPath}");
         return true;
     }
 
@@ -184,9 +197,10 @@ public class ChatService
         
         if (chat.CreatorNickname != creatorNickname) return false;
         
+        var chatName = chat.Name;
         _chats.Remove(chat);
         SaveChats();
-        LogEvent?.Invoke(creatorNickname, $"Удалил чат {chat.Name}");
+        _logService.AddLog(creatorNickname, "DeleteChat", chatName, "Чат удалён");
         return true;
     }
 
@@ -200,13 +214,12 @@ public class ChatService
         
         if (member.Role == ChatRole.Creator)
         {
-            // Создатель не может выйти, только удалить чат
             return false;
         }
         
         chat.Members.Remove(member);
         SaveChats();
-        LogEvent?.Invoke(nickname, $"Покинул чат {chat.Name}");
+        _logService.AddLog(nickname, "LeaveChat", chat.Name, "Покинул чат");
         return true;
     }
 
@@ -228,7 +241,7 @@ public class ChatService
         chat.Messages.Add(message);
         SaveChats();
         
-        LogEvent?.Invoke(senderNickname, $"Отправил сообщение в чат {chat.Name}: {content}");
+        _logService.AddLog(senderNickname, "SendMessage", chat.Name, content);
     }
 
     public List<Message> GetChatMessages(int chatId)

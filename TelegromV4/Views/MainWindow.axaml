@@ -23,7 +23,7 @@
                 <StackPanel Margin="30"
                             Spacing="15">
                     
-                    <TextBlock Text="⛔ ДОСТУП ЗАБЛОКИРОВАН ⛔"
+                    <TextBlock Text="⛔ ВЫ ЗАБАНЕНЫ ⛔"
                                FontSize="24"
                                FontWeight="Bold"
                                Foreground="#F44336"

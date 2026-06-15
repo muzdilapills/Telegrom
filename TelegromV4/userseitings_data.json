@@ -1,0 +1,13 @@
+[
+  {
+    "Nickname": "admin",
+    "InviteToChats": 0,
+    "InviteToChannels": 0,
+    "PrivateMessages": 0,
+    "ShowAvatar": 0,
+    "StreamerMode": false,
+    "Theme": 3,
+    "WallpaperPath": "new_wallpaper.png",
+    "AvatarPath": null
+  }
+]

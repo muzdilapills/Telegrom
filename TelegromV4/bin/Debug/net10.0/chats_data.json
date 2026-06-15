@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Name": "ds",
+    "CreatorNickname": "admin",
+    "AvatarPath": null,
+    "Messages": [],
+    "Members": [
+      {
+        "Nickname": "admin",
+        "Role": 2,
+        "JoinedAt": "2026-06-15T17:38:41.0543735+03:00"
+      }
+    ],
+    "DisplayName": "ds",
+    "MemberCount": "1 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u043E\u0432"
+  }
+]

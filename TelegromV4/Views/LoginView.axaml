@@ -7,13 +7,27 @@
     <StackPanel Spacing="15"
                 VerticalAlignment="Center">
         
-        <TextBlock Text="Welcome! Вход в Telegrom"
+        <!-- Аватарка приложения -->
+        <Border Width="100"
+                Height="100"
+                CornerRadius="50"
+                Background="#4CAF50"
+                HorizontalAlignment="Center">
+            <TextBlock Text="T"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+        </Border>
+        
+        <TextBlock Text="Telegrom v4.0"
                    FontSize="24"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Margin="0,0,0,20"/>
 
-        <TextBox PlaceholderText="Никнейм"
+        <TextBox PlaceholderText="Никнейм (только латиница)"
                  Text="{Binding Nickname}"
                  FontSize="14"
                  Height="40"/>
@@ -33,7 +47,6 @@
                 Command="{Binding LoginCommand}"
                 Background="#4CAF50"
                 Foreground="White"
-                HorizontalAlignment="Center"
                 Height="40"
                 FontSize="14"/>
 

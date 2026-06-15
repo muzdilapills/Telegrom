@@ -22,32 +22,47 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TelegromV4
-build_property.ProjectDir = C:\Users\д.тупальский\source\repos\TelegromV4\
+build_property.ProjectDir = C:\Users\д.тупальский\GitHubbb\Telegrom\TelegromV4\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/App.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/ChatSettingsView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/ChannelMembersView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/ChatsView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/ChatSettingsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/CreateChatView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/ChatsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/LoginView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/CreateChannelView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/MainWindow.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/CreateChatView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/RegisterView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/CreateGroupView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/д.тупальский/source/repos/TelegromV4/Views/TerminalView.axaml]
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/LoginView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/RegisterView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/SettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/TerminalView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/д.тупальский/GitHubbb/Telegrom/TelegromV4/Views/UserProfileView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

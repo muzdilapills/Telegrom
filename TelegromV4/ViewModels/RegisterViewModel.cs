@@ -34,51 +34,57 @@ public partial class RegisterViewModel : ObservableObject
     {
         _userService = userService;
     }
-
-    [RelayCommand]
-    private void Register()
+[RelayCommand]
+private void Register()
+{
+    if (string.IsNullOrWhiteSpace(Nickname))
     {
-        if (string.IsNullOrWhiteSpace(Nickname))
-        {
-            ErrorMessage = "Введите никнейм";
-            HasError = true;
-            return;
-        }
-        
-        if (string.IsNullOrWhiteSpace(Email) || !Email.Contains("@"))
-        {
-            ErrorMessage = "Введите корректный email";
-            HasError = true;
-            return;
-        }
-        
-        if (string.IsNullOrWhiteSpace(Password) || Password.Length < 4)
-        {
-            ErrorMessage = "Пароль должен быть не менее 4 символов";
-            HasError = true;
-            return;
-        }
-        
-        if (Password != ConfirmPassword)
-        {
-            ErrorMessage = "Пароли не совпадают";
-            HasError = true;
-            return;
-        }
-        
-        var success = _userService.Register(Nickname, Email, Password);
-        
-        if (success)
-        {
-            HasError = false;
-            RegisterSuccess?.Invoke();
-        }
-        else
-        {
-            ErrorMessage = "Пользователь с таким никнеймом уже существует";
-            HasError = true;
-        }
+        ErrorMessage = "Введите никнейм";
+        HasError = true;
+        return;
     }
+    
+    if (!_userService.IsNicknameValid(Nickname))
+    {
+        ErrorMessage = "Никнейм должен содержать только латиницу, цифры и _";
+        HasError = true;
+        return;
+    }
+    
+    if (string.IsNullOrWhiteSpace(Email) || !Email.Contains("@"))
+    {
+        ErrorMessage = "Введите корректный email";
+        HasError = true;
+        return;
+    }
+    
+    if (string.IsNullOrWhiteSpace(Password) || Password.Length < 4)
+    {
+        ErrorMessage = "Пароль должен быть не менее 4 символов";
+        HasError = true;
+        return;
+    }
+    
+    if (Password != ConfirmPassword)
+    {
+        ErrorMessage = "Пароли не совпадают";
+        HasError = true;
+        return;
+    }
+    
+    var success = _userService.Register(Nickname, Email, Password);
+    
+    if (success)
+    {
+        HasError = false;
+        RegisterSuccess?.Invoke();
+    }
+    else
+    {
+        ErrorMessage = "Пользователь с таким никнеймом уже существует";
+        HasError = true;
+    }
+}
 
     [RelayCommand]
     private void GoToLogin()

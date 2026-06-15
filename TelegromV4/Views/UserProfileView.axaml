@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TelegromV4.Views.UserProfileView"
+             x:DataType="vm:UserProfileViewModel"
+             xmlns:vm="using:TelegromV4.ViewModels">
+
+    <Border Background="#2D2D30"
+            CornerRadius="15"
+            Padding="30"
+            Width="350">
+        <StackPanel Spacing="20"
+                   HorizontalAlignment="Center">
+            
+            <!-- Аватар -->
+            <Border Width="120"
+                    Height="120"
+                    CornerRadius="60"
+                    Background="#4CAF50"
+                    HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Nickname, StringFormat='{}{0:0}'}"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </Border>
+            
+            <!-- Никнейм -->
+            <TextBlock Text="{Binding Nickname}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+            
+            <!-- Email -->
+            <TextBlock Text="{Binding Email}"
+                       FontSize="14"
+                       Foreground="Gray"
+                       HorizontalAlignment="Center"/>
+            
+            <!-- Кнопки -->
+            <Button Content="{Binding ContactButtonText}"
+                    Command="{Binding ToggleContactCommand}"
+                    Background="#2196F3"
+                    Foreground="White"
+                    Height="40"
+                    Width="200"/>
+            
+            <Button Content="💬 Начать общение"
+                    Command="{Binding StartChatCommand}"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    Height="40"
+                    Width="200"/>
+            
+            <Button Content="✖ Закрыть"
+                    Command="{Binding CloseCommand}"
+                    Background="#555555"
+                    Foreground="White"
+                    Height="35"
+                    Width="200"/>
+        </StackPanel>
+    </Border>
+</UserControl>

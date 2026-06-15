@@ -13,11 +13,13 @@ public class AdminService
     private const string AdminsFile = "admins.json";
     private List<BannedUser> _bannedUsers = new List<BannedUser>();
     private List<string> _admins = new List<string>();
+    private readonly LogService _logService;
 
     public event Action<string, string>? LogEvent;
 
-    public AdminService()
+    public AdminService(LogService logService)
     {
+        _logService = logService;
         LoadBannedUsers();
         LoadAdmins();
         
@@ -26,6 +28,15 @@ public class AdminService
         {
             _admins.Add("Fourteen");
             SaveAdmins();
+            _logService.AddLog("System", "CreateAdmin", "Fourteen", "Администратор создан");
+        }
+        
+        // Добавляем администратора admin
+        if (!_admins.Contains("admin"))
+        {
+            _admins.Add("admin");
+            SaveAdmins();
+            _logService.AddLog("System", "CreateAdmin", "admin", "Администратор создан");
         }
     }
 
@@ -70,7 +81,19 @@ public class AdminService
         {
             _admins.Add(nickname);
             SaveAdmins();
+            _logService.AddLog("System", "MakeAdmin", nickname, "Назначен администратором");
             LogEvent?.Invoke("System", $"Пользователь {nickname} назначен администратором");
+        }
+    }
+
+    public void RemoveAdmin(string nickname)
+    {
+        if (_admins.Contains(nickname) && nickname != "Fourteen" && nickname != "admin")
+        {
+            _admins.Remove(nickname);
+            SaveAdmins();
+            _logService.AddLog("System", "RemoveAdmin", nickname, "Снят с должности администратора");
+            LogEvent?.Invoke("System", $"Пользователь {nickname} снят с должности администратора");
         }
     }
 
@@ -85,7 +108,20 @@ public class AdminService
                 Reason = reason
             });
             SaveBannedUsers();
+            _logService.AddLog("System", "BanUser", nickname, $"Причина: {reason}");
             LogEvent?.Invoke("System", $"Пользователь {nickname} забанен. Причина: {reason}");
+        }
+    }
+
+    public void UnbanUser(string nickname)
+    {
+        var user = _bannedUsers.FirstOrDefault(b => b.Nickname == nickname);
+        if (user != null)
+        {
+            _bannedUsers.Remove(user);
+            SaveBannedUsers();
+            _logService.AddLog("System", "UnbanUser", nickname, "Разбанен");
+            LogEvent?.Invoke("System", $"Пользователь {nickname} разбанен");
         }
     }
 
@@ -108,16 +144,5 @@ public class AdminService
     public List<string> GetAdmins()
     {
         return _admins;
-    }
-
-    public void UnbanUser(string nickname)
-    {
-        var user = _bannedUsers.FirstOrDefault(b => b.Nickname == nickname);
-        if (user != null)
-        {
-            _bannedUsers.Remove(user);
-            SaveBannedUsers();
-            LogEvent?.Invoke("System", $"Пользователь {nickname} разбанен");
-        }
     }
 }

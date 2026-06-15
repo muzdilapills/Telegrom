@@ -1,0 +1,110 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TelegromV4.Views.CreateGroupView"
+             x:DataType="vm:CreateGroupViewModel"
+             xmlns:vm="using:TelegromV4.ViewModels">
+
+    <Border Background="#2D2D30"
+            CornerRadius="10"
+            Padding="20">
+        <StackPanel Spacing="15"
+                   Width="400">
+            
+            <TextBlock Text="Создание группы"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+            
+            <TextBox PlaceholderText="Название группы"
+                     Text="{Binding GroupName}"
+                     FontSize="14"
+                     Height="40"/>
+            
+            <TextBlock Text="Выберите аватар (опционально)"
+                       Foreground="Gray"
+                       FontSize="12"/>
+            <Button Content="📁 Выбрать аватар"
+                    Command="{Binding SelectAvatarCommand}"
+                    Background="#555555"
+                    Foreground="White"/>
+            
+            <TextBlock Text="Участники"
+                       FontSize="14"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+            
+            <ListBox ItemsSource="{Binding AvailableUsers}"
+                     SelectedItem="{Binding SelectedUser}"
+                     Height="150">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="5">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Nickname}"
+                                           FontSize="14"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Email}"
+                                           FontSize="10"
+                                           Foreground="Gray"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+            <Button Content="➕ Добавить участника"
+                    Command="{Binding AddUserCommand}"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    IsEnabled="{Binding IsUserSelected}"/>
+            
+            <TextBlock Text="Выбранные участники:"
+                       FontSize="12"
+                       Foreground="Gray"/>
+            <ItemsControl ItemsSource="{Binding SelectedUsers}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2"
+                                Padding="5"
+                                Background="#3D3D40"
+                                CornerRadius="3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Nickname}"/>
+                                <Button Content="✖"
+                                        Command="{Binding $parent[ItemsControl].DataContext.RemoveUserCommand}"
+                                        CommandParameter="{Binding}"
+                                        Background="Transparent"
+                                        Foreground="#F44336"
+                                        Margin="10,0,0,0"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <TextBlock Text="{Binding ErrorMessage}"
+                       Foreground="Red"
+                       FontSize="12"
+                       IsVisible="{Binding HasError}"/>
+            
+            <Grid ColumnDefinitions="*,*">
+    <Button Grid.Column="0"
+            Content="Создать"
+            Command="{Binding CreateGroupCommand}"
+            Background="#4CAF50"
+            Foreground="White"
+            Height="35"
+            Margin="0,0,5,0"/>
+    <Button Grid.Column="1"
+            Content="Отмена"
+            Command="{Binding CancelCommand}"
+            Background="#555555"
+            Foreground="White"
+            Height="35"
+            Margin="5,0,0,0"/>
+</Grid>
+        </StackPanel>
+    </Border>
+</UserControl>

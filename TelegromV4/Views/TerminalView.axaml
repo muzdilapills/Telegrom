@@ -4,120 +4,147 @@
              x:DataType="vm:TerminalViewModel"
              xmlns:vm="using:TelegromV4.ViewModels">
 
-    <Grid ColumnDefinitions="250,*,350">
-        <!-- Левая панель - пользователи -->
+    <Grid ColumnDefinitions="200,*">
+        <!-- Левая панель - кнопки -->
         <Border Grid.Column="0"
                 Background="#252526">
-            <StackPanel>
-                <Border Height="50"
-                        Background="#2D2D30">
-                    <TextBlock Text="Пользователи"
-                               FontSize="18"
-                               FontWeight="Bold"
-                               Foreground="White"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
-                </Border>
-                
-                <ListBox ItemsSource="{Binding AllUsers}"
-                         SelectedItem="{Binding SelectedUser}"
-                         Margin="5">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Border Padding="10">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Nickname}"
-                                               FontSize="14"
-                                               FontWeight="Bold"/>
-                                    <TextBlock Text="{Binding Email}"
-                                               FontSize="11"
-                                               Foreground="Gray"/>
-                                </StackPanel>
-                            </Border>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
-        </Border>
-        
-        <!-- Центральная панель - управление пользователем -->
-        <Border Grid.Column="1"
-                Background="#1E1E1E">
-            <StackPanel Margin="15"
-                       Spacing="10">
-                <TextBlock Text="Управление пользователем"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Foreground="White"/>
-                
-                <TextBlock Text="{Binding SelectedUserInfo}"
-                           FontSize="12"
-                           TextWrapping="Wrap"/>
-                
-                <TextBox Watermark="Причина бана"
-                         Text="{Binding BanReason}"/>
-                
-                <Button Content="👑 Назначить администратором"
-                        Command="{Binding MakeAdminCommand}"
+            <StackPanel Margin="10"
+                       Spacing="5">
+                <Button Content="👥 Пользователи"
+                        Command="{Binding SetUsersTabCommand}"
                         Background="#2196F3"
-                        Foreground="White"/>
-                
-                <Button Content="🔨 Забанить"
-                        Command="{Binding BanUserCommand}"
-                        Background="#F44336"
-                        Foreground="White"/>
-                
-                <Button Content="📊 Данные пользователей"
-                        Command="{Binding ViewUserDataCommand}"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="💬 Группы"
+                        Command="{Binding SetChatsTabCommand}"
+                        Background="#FF9800"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="📢 Каналы"
+                        Command="{Binding SetChannelsTabCommand}"
                         Background="#9C27B0"
-                        Foreground="White"/>
-            </StackPanel>
-        </Border>
-        
-        <!-- Правая панель - логи -->
-        <Border Grid.Column="2"
-                Background="#252526">
-            <StackPanel>
-                <Border Height="50"
-                        Background="#2D2D30">
-                    <TextBlock Text="Логи"
-                               FontSize="18"
-                               FontWeight="Bold"
-                               Foreground="White"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
-                </Border>
-                
-                <ScrollViewer Height="450">
-                    <ItemsControl ItemsSource="{Binding Logs}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Margin="5"
-                                        Padding="5"
-                                        CornerRadius="3">
-                                    <StackPanel>
-                                        <TextBlock FontWeight="Bold">
-                                            <Run Text="{Binding Timestamp, StringFormat='{}{0:HH:mm:ss}'}"/>
-                                            <Run Text=" - "/>
-                                            <Run Text="{Binding User}"/>
-                                            <Run Text=":"/>
-                                        </TextBlock>
-                                        <TextBlock Text="{Binding Action}"
-                                                   TextWrapping="Wrap"
-                                                   Margin="10,0,0,0"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-                
-                <Button Content="✖ Закрыть"
-                        Command="{Binding CloseCommand}"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="📋 Логи"
+                        Command="{Binding SetLogsTabCommand}"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        Height="35"/>
+                <Button Content="🔄 Обновить"
+                        Command="{Binding RefreshCommand}"
                         Background="#555555"
                         Foreground="White"
-                        Margin="5"/>
+                        Height="35"/>
+                <Button Content="✖ Закрыть"
+                        Command="{Binding CloseCommand}"
+                        Background="#F44336"
+                        Foreground="White"
+                        Height="35"
+                        Margin="0,20,0,0"/>
             </StackPanel>
         </Border>
+        
+        <!-- Правая панель - содержимое -->
+        <ScrollViewer Grid.Column="1"
+                      Background="#1E1E1E">
+            <StackPanel Margin="15"
+                       Spacing="10">
+                
+                <!-- Заголовок -->
+                <TextBlock Text="{Binding SelectedTab}"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                
+                <!-- Пользователи -->
+                <Border Background="#2D2D30"
+                        CornerRadius="5"
+                        Margin="0,0,0,10">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Список пользователей"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <ListBox ItemsSource="{Binding AllUsers}"
+                                 SelectedItem="{Binding SelectedUser}"
+                                 Height="200">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="10">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Nickname}"
+                                                       FontSize="14"
+                                                       FontWeight="Bold"/>
+                                            <TextBlock Text="{Binding Email}"
+                                                       FontSize="11"
+                                                       Foreground="Gray"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        
+                        <TextBlock Text="{Binding SelectedUserInfo}"
+                                   Margin="0,10,0,0"/>
+                        
+                        <TextBox PlaceholderText="Причина бана"
+                                 Text="{Binding BanReason}"
+                                 Margin="0,5"/>
+                        
+                        <StackPanel Orientation="Horizontal"
+                                   Spacing="5">
+                            <Button Content="Выдать админа"
+                                    Command="{Binding MakeAdminCommand}"
+                                    Background="#2196F3"
+                                    Foreground="White"/>
+                            <Button Content="Забанить"
+                                    Command="{Binding BanUserCommand}"
+                                    Background="#F44336"
+                                    Foreground="White"/>
+                            <Button Content="Разбанить"
+                                    Command="{Binding UnbanUserCommand}"
+                                    Background="#4CAF50"
+                                    Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Логи -->
+                <Border Background="#2D2D30"
+                        CornerRadius="5">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Логи"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <ScrollViewer Height="300">
+                            <ItemsControl ItemsSource="{Binding Logs}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Margin="2"
+                                                Padding="5">
+                                            <StackPanel>
+                                                <TextBlock>
+                                                    <Run Text="{Binding Timestamp}"/>
+                                                    <Run Text=" - "/>
+                                                    <Run Text="{Binding UserNickname}"/>
+                                                    <Run Text=" - "/>
+                                                    <Run Text="{Binding Action}"/>
+                                                </TextBlock>
+                                                <TextBlock Text="{Binding Details}"
+                                                           FontSize="11"
+                                                           Foreground="Gray"
+                                                           Margin="10,0,0,0"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

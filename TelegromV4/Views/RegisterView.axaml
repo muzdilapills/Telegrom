@@ -7,13 +7,27 @@
     <StackPanel Spacing="15"
                 VerticalAlignment="Center">
         
-        <TextBlock Text="Регистрация в Telegrom V4"
+        <!-- Аватарка приложения -->
+        <Border Width="100"
+                Height="100"
+                CornerRadius="50"
+                Background="#4CAF50"
+                HorizontalAlignment="Center">
+            <TextBlock Text="T"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+        </Border>
+        
+        <TextBlock Text="Регистрация в Telegrom v4.0"
                    FontSize="24"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Margin="0,0,0,20"/>
 
-        <TextBox PlaceholderText="Никнейм"
+        <TextBox PlaceholderText="Никнейм (только латиница, цифры, _)"
                  Text="{Binding Nickname}"
                  FontSize="14"
                  Height="40"/>
@@ -23,7 +37,7 @@
                  FontSize="14"
                  Height="40"/>
 
-        <TextBox PlaceholderText="Пароль"
+        <TextBox PlaceholderText="Пароль (мин. 4 символа)"
                  Text="{Binding Password}"
                  FontSize="14"
                  Height="40"

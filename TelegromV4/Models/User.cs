@@ -12,4 +12,7 @@ public class User
     
     [JsonPropertyName("password")]
     public string Password { get; set; } = string.Empty;
+    
+    [JsonPropertyName("avatar")]
+    public string? AvatarPath { get; set; }
 }
