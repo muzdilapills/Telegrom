@@ -6,166 +6,82 @@ Telegrom - Это мессенджер с открытым исходным ко
 
 
 
-#№ Структура проекта Telegrom
+# Структура проекта Telegrom
 
-TelegromV4/
-│
-├── Models/
-│   ├── User.cs
-│   ├── Chat.cs
-│   ├── Channel.cs
-│   ├── Message.cs
-│   ├── PrivateChat.cs
-│   ├── Contact.cs
-│   ├── FavoriteMessage.cs
-│   ├── UserSettings.cs
-│   ├── BannedUser.cs
-│   └── LogEntry.cs
-│
-├── Services/
-│   ├── UserService.cs
-│   ├── ChatService.cs
-│   ├── ChannelService.cs
-│   ├── PrivateChatService.cs
-│   ├── AdminService.cs
-│   ├── LogService.cs
-│   ├── SettingsService.cs
-│   ├── ContactService.cs
-│   ├── FavoriteService.cs
-│   ├── FileDialogService.cs
-│   └── ThemeService.cs
-│
-├── ViewModels/
-│   ├── MainWindowViewModel.cs
-│   ├── LoginViewModel.cs
-│   ├── RegisterViewModel.cs
-│   ├── ChatsViewModel.cs
-│   ├── ChatSettingsViewModel.cs
-│   ├── ChannelMembersViewModel.cs
-│   ├── CreateGroupViewModel.cs
-│   ├── CreateChannelViewModel.cs
-│   ├── CreateChatViewModel.cs
-│   ├── SettingsViewModel.cs
-│   ├── TerminalViewModel.cs
-│   └── UserProfileViewModel.cs
-│
-├── Views/
-│   ├── MainWindow.axaml
-│   ├── MainWindow.axaml.cs
-│   ├── LoginView.axaml
-│   ├── LoginView.axaml.cs
-│   ├── RegisterView.axaml
-│   ├── RegisterView.axaml.cs
-│   ├── ChatsView.axaml
-│   ├── ChatsView.axaml.cs
-│   ├── ChatSettingsView.axaml
-│   ├── ChatSettingsView.axaml.cs
-│   ├── ChannelMembersView.axaml
-│   ├── ChannelMembersView.axaml.cs
-│   ├── CreateGroupView.axaml
-│   ├── CreateGroupView.axaml.cs
-│   ├── CreateChannelView.axaml
-│   ├── CreateChannelView.axaml.cs
-│   ├── CreateChatView.axaml
-│   ├── CreateChatView.axaml.cs
-│   ├── SettingsView.axaml
-│   ├── SettingsView.axaml.cs
-│   ├── TerminalView.axaml
-│   ├── TerminalView.axaml.cs
-│   ├── UserProfileView.axaml
-│   └── UserProfileView.axaml.cs
-│
-├── Converters/
-│   └── BoolConverters.cs
-│
-├── App.axaml
-├── App.axaml.cs
-├── Program.cs
-├── TelegromV4.csproj
-├── app.manifest
-│
-├── JSON файлы / Базы данных
-│   ├── users_data.json
-│   ├── chats_data.json
-│   ├── channels_data.json
-│   ├── userstheirchats_base.json
-│   ├── contacts.json
-│   ├── Favorites.json
-│   ├── userseitings_data.json
-│   ├── userschatsthemes.json
-│   ├── logstelegrom.json
-│   ├── banned_users.json
-│   └── admins.json
-│
-├── bin/
-└── obj/
+## Models (Модели данных)
 
-### Ничего не понял, за что файлы отвечают?
+- **User.cs** - Пользователь (никнейм, email, пароль, аватар)
+- **Chat.cs** - Групповой чат (название, создатель, участники, сообщения)
+- **Channel.cs** - Канал (название, создатель, подписчики, сообщения)
+- **Message.cs** - Сообщение (отправитель, текст, время, вложение)
+- **PrivateChat.cs** - Личный чат (два пользователя, сообщения)
+- **Contact.cs** - Контакт (владелец, контакт, кастомное имя)
+- **FavoriteMessage.cs** - Избранное (пользователь, текст, время)
+- **UserSettings.cs** - Настройки (тема, приватность, аватар, обои)
+- **BannedUser.cs** - Забаненный пользователь (ник, email, причина)
+- **LogEntry.cs** - Запись лога (пользователь, действие, цель, детали)
 
-### Models (Модели данных)
-User.cs - пользователь (ник, email, пароль, аватар)
-Chat.cs - групповой чат (название, создатель, участники, сообщения)
-Channel.cs - канал (название, создатель, подписчики, сообщения)
-Message.cs - сообщение (отправитель, текст, время, вложение)
-PrivateChat.cs - личный чат (два пользователя, сообщения)
-Contact.cs - контакт (владелец, контакт, кастомное имя)
-FavoriteMessage.cs - избранное сообщение (пользователь, текст, время)
-UserSettings.cs - настройки пользователя (тема, приватность, аватар, обои)
-BannedUser.cs - забаненный пользователь (ник, email, причина)
-LogEntry.cs - запись лога (пользователь, действие, цель, детали)
+## Services
 
-### Services (Сервисы)
-UserService.cs - регистрация, логин, получение пользователей
-ChatService.cs - создание групп, добавление/удаление участников, сообщения
-ChannelService.cs - создание каналов, подписка, сообщения
-PrivateChatService.cs - личные чаты, сообщения
-AdminService.cs - бан/разбан, выдача/снятие админа
-LogService.cs - логирование действий
-SettingsService.cs - сохранение/загрузка настроек
-ContactService.cs - контакты, переименование
-FavoriteService.cs - избранное
-FileDialogService.cs - диалоги выбора файлов
-ThemeService.cs - применение тем
-ViewModels (ViewModel)
-MainWindowViewModel.cs - главное окно, навигация
-LoginViewModel.cs - логин
-RegisterViewModel.cs - регистрация
-ChatsViewModel.cs - список чатов, сообщения
-ChatSettingsViewModel.cs - настройки чата
-ChannelMembersViewModel.cs - список участников канала
-CreateGroupViewModel.cs - создание группы
-CreateChannelViewModel.cs - создание канала
-CreateChatViewModel.cs - создание чата
-SettingsViewModel.cs - настройки приложения
-TerminalViewModel.cs - терминал администратора
-UserProfileViewModel.cs - профиль пользователя
+- **UserService.cs** - Регистрация, логин, управление пользователями
+- **ChatService.cs** - Группы, участники, сообщения
+- **ChannelService.cs** - Каналы, подписка, сообщения
+- **PrivateChatService.cs** - Личные чаты, сообщения
+- **AdminService.cs** - Бан/разбан, администрирование
+- **LogService.cs** - Логирование действий
+- **SettingsService.cs** - Сохранение/загрузка настроек
+- **ContactService.cs** - Контакты, переименование
+- **FavoriteService.cs** - Избранные сообщения
+- **FileDialogService.cs** - Диалоги выбора файлов
+- **ThemeService.cs** - Применение тем
 
-### Views (Представления)
-MainWindow.axaml/.cs - главное окно
-LoginView.axaml/.cs - окно входа
-RegisterView.axaml/.cs - окно регистрации
-ChatsView.axaml/.cs - список чатов
-ChatSettingsView.axaml/.cs - настройки чата
-ChannelMembersView.axaml/.cs - список участников канала
-CreateGroupView.axaml/.cs - создание группы
-CreateChannelView.axaml/.cs - создание канала
-CreateChatView.axaml/.cs - создание чата
-SettingsView.axaml/.cs - настройки приложения
-TerminalView.axaml/.cs - терминал администратора
-UserProfileView.axaml/.cs - профиль пользователя
+## ViewModels
 
-### JSON файлы / Базы данных
-users_data.json - данные пользователей
-chats_data.json - данные групповых чатов
-channels_data.json - данные каналов
-userstheirchats_base.json - личные сообщения
-contacts.json - контакты пользователей
-Favorites.json - избранные сообщения
-userseitings_data.json - настройки приватности
-userschatsthemes.json - темы и обои
-logstelegrom.json - логи действий
-banned_users.json - забаненные пользователи
-admins.json - администраторы
+- **MainWindowViewModel.cs** - Главное окно, навигация
+- **LoginViewModel.cs** - Страница входа
+- **RegisterViewModel.cs** - Страница регистрации
+- **ChatsViewModel.cs** - Список чатов, сообщения
+- **ChatSettingsViewModel.cs** - Настройки чата
+- **ChannelMembersViewModel.cs** - Участники канала (поиск)
+- **CreateGroupViewModel.cs** - Создание группы
+- **CreateChannelViewModel.cs** - Создание канала
+- **CreateChatViewModel.cs** - Создание чата
+- **SettingsViewModel.cs** - Настройки приложения
+- **TerminalViewModel.cs** - Терминал администратора
+- **UserProfileViewModel.cs** - Профиль пользователя
+
+## Views
+
+- **MainWindow.axaml/.cs** - Главное окно
+- **LoginView.axaml/.cs** - Страница входа
+- **RegisterView.axaml/.cs** - Страница регистрации
+- **ChatsView.axaml/.cs** - Список чатов
+- **ChatSettingsView.axaml/.cs** - Настройки чата
+- **ChannelMembersView.axaml/.cs** - Участники канала
+- **CreateGroupView.axaml/.cs** - Создание группы
+- **CreateChannelView.axaml/.cs** - Создание канала
+- **CreateChatView.axaml/.cs** - Создание чата
+- **SettingsView.axaml/.cs** - Настройки приложения
+- **TerminalView.axaml/.cs** - Терминал администратора
+- **UserProfileView.axaml/.cs** - Профиль пользователя
+
+## Converters (Конвертеры)
+
+- **BoolConverters.cs** - Конвертеры для XAML-привязок
+
+## Базы данных (JSON) (Примечание: Проект их может создавать сам)
+
+- **users_data.json** - Личные данные пользователя (Пароль почта никнейм)
+- **chats_data.json** - Все группы пользователей (Сообщения названия ID Аватарка Пользователи)
+- **channels_data.json** - Все каналы пользователей (Сообщение названия Id Аватарка Пользователи)
+- **userstheirchats_base.json** - Личные чаты между двумя пользователями (Участники Сообщения)
+- **contacts.json** - Все контакты пользователей (CustomName Пользователь ВладелецКонтакта)
+- **Favorites.json** - Хранит сообщения в избранное (Пользователь Сообщения)
+- **userseitings_data.json** - Личные настройки каждого пользователя
+- **userschatsthemes.json** - Темы и Обои пользователей / *Устарело*
+- **logstelegrom.json** - Логи пользователей
+- **banned_users.json** - Список забаненых участников Telegrom
+- **admins.json** - Список администраторов Telegrom
 
 # Как скачать Telegrom?
 
