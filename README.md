@@ -52,18 +52,18 @@ Telegrom - Это мессенджер с открытым исходным ко
 
 ### Views
 
-- **MainWindow.axaml/.cs** - Главное окно
-- **LoginView.axaml/.cs** - Страница входа
-- **RegisterView.axaml/.cs** - Страница регистрации
-- **ChatsView.axaml/.cs** - Список чатов
-- **ChatSettingsView.axaml/.cs** - Настройки чата
-- **ChannelMembersView.axaml/.cs** - Участники канала
-- **CreateGroupView.axaml/.cs** - Создание группы
-- **CreateChannelView.axaml/.cs** - Создание канала
-- **CreateChatView.axaml/.cs** - Создание чата
-- **SettingsView.axaml/.cs** - Настройки приложения
-- **TerminalView.axaml/.cs** - Терминал администратора
-- **UserProfileView.axaml/.cs** - Профиль пользователя
+- **MainWindow.axaml.cs** - Главное окно
+- **LoginView.axaml.cs** - Страница входа
+- **RegisterView.axaml.cs** - Страница регистрации
+- **ChatsView.axaml.cs** - Список чатов
+- **ChatSettingsView.axaml.cs** - Настройки чата
+- **ChannelMembersView.axaml.cs** - Участники канала
+- **CreateGroupView.axaml.cs** - Создание группы
+- **CreateChannelView.axaml.cs** - Создание канала
+- **CreateChatView.axaml.cs** - Создание чата
+- **SettingsView.axaml.cs** - Настройки приложения
+- **TerminalView.axaml.cs** - Терминал администратора
+- **UserProfileView.axaml.cs** - Профиль пользователя
 
 ### Converters (Конвертеры)
 
