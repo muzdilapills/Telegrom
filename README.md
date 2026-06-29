@@ -32,8 +32,6 @@ Telegrom - Это мессенджер с открытым исходным ко
 - **SettingsService.cs** - Сохранение/загрузка настроек
 - **ContactService.cs** - Контакты, переименование
 - **FavoriteService.cs** - Избранные сообщения
-- **FileDialogService.cs** - Диалоги выбора файлов
-- **ThemeService.cs** - Применение тем
 
 ### ViewModels
 
